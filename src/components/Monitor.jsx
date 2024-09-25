@@ -3,6 +3,7 @@ import dummydata from "../dummydata.json";
 const Monitor = () => {
   // console.log(dummydata);
 
+  // as i cannot connect to the stream reliably i needed to add some dummy data to keep working on
   return (
     <div className="container my-4">
       <div>
