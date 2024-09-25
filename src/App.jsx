@@ -21,7 +21,15 @@ function App() {
 
         socket.onmessage = function onStreamMessage(event) {
           console.log("Message from server " + event.data);
+          if (event.data.P < 50000) {
+            event.data.flag = "D0E2F4";
+          } else if (event.data.Q > 10) {
+            event.data.flag = "FFF2CC";
+          } else if (event.data.Q * event.data.P > 1000000) {
+            event.data.flag = "EAD1DC";
+          }
           setStreamData(event.data);
+          console.log(streamData);
         };
       } else if (socket.readyState == WebSocket.OPEN) {
         socket.close();

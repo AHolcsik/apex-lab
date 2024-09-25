@@ -1,14 +1,18 @@
 import dummydata from "../dummydata.json";
 
 const Monitor = () => {
-  console.log(dummydata);
+  // console.log(dummydata);
 
   return (
     <div className="container my-4">
       <div>
         {dummydata.map((d) => (
-          // <p style={{ fontSize: "small" }}>{JSON.stringify(d)}</p>
-          <p style={{ fontSize: "small" }}>
+          <p
+            style={{
+              fontSize: "small",
+              background: `#${d.flag ? d.flag : ""}`,
+            }}
+          >
             <b>Type: </b>
             {d.TYPE},<b> M: </b>
             {d.M},<b> FSYM: </b>
